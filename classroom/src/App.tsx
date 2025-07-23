@@ -12,15 +12,19 @@ export function App(){
     // const { show } = useMessage({age: 18, name: "Fulano"})
 
     function handleAdd(){
-        setCount(count + 1)
+        setCount(count + 1)  
     }
     function handleRemove(){
-        setCount(count - 1)
+        if (count > 0) {
+            setCount(count - 1)            
+        }
     }
 
     useEffect(() => {
-        console.log("Oi!")
-    }, [])
+        if (count > 0) {
+            console.log("O valor mudou para " + count)            
+        }
+    }, [count])
 
     return (
         //<>  
